@@ -7,12 +7,34 @@
 <body>
 	<h1>Consumo de APIs</h1>
 
-	<button onclick="callApi(0)">Llamar API 1</button>
-    <button onclick="callApi(1)">Llamar API 2</button>
-    <button onclick="callApi(2)">Llamar API 3</button>
+	<div class="input-param">
+        <h3>API 1</h3>
+        <label>_locale: <input type="text" id="locale1"/></label>
+        <label>_quantity: <input type="number" id="quantity1"/></label>
+        <label>_seed: <input type="number" id="seed1"/></label>
+    </div>
 
-    <div id="api1-output">Salida API 1:</div>
-    <div id="api2-output">Salida API 2:</div>
-    <div id="api3-output">Salida API 3:</div>
+    <button onclick="callApi(0)">Llamar API 1</button>
+    <div class="output" id="api1-output">Salida API 1:</div>
+
+    <div class="input-param">
+        <h3>API 2</h3>
+        <label>_locale: <input type="text" id="locale2"/></label>
+        <label>_quantity: <input type="number" id="quantity2"/></label>
+        <label>_seed: <input type="number" id="seed2"/></label>
+    </div>
+
+    <button onclick="callApi(1)">Llamar API 2</button>
+    <div class="output" id="api2-output">Salida API 2:</div>
+
+    <div class="input-param">
+        <h3>API 3</h3>
+        <label>_locale: <input type="text" id="locale3"/></label>
+        <label>_quantity: <input type="number" id="quantity3"/></label>
+        <label>_seed: <input type="number" id="seed3"/></label>
+    </div>
+
+    <button onclick="callApi(2)">Llamar API 3</button>
+    <div class="output" id="api3-output">Salida API 3:</div>
 </body>
 </html>
