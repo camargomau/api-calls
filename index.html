@@ -36,5 +36,30 @@
 
     <button onclick="callApi(2)">Llamar API 3</button>
     <div class="output" id="api3-output">Salida API 3:</div>
+
+	<script>
+        async function callApi(index) {
+            const baseUrls = [
+                "https://fakerapi.it/api/v2/persons",
+                "https://fakerapi.it/api/v2/books",
+                "https://fakerapi.it/api/v2/places"
+            ];
+
+            const locale = document.getElementById(`locale${index + 1}`).value;
+            const quantity = document.getElementById(`quantity${index + 1}`).value;
+            const seed = document.getElementById(`seed${index + 1}`).value;
+
+            const url = `${baseUrls[index]}?_locale=${locale}&_quantity=${quantity}&_seed=${seed}`;
+            const outputElement = document.getElementById(`api${index + 1}-output`);
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                outputElement.innerText = `Salida API ${index + 1}:\n ${JSON.stringify(data, null, 4)}`;
+            } catch (error) {
+                outputElement.innerText = `Error: ${error.message}`;
+            }
+        }
+    </script>
 </body>
 </html>
